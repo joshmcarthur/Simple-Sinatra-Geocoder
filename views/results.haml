@@ -1,0 +1,16 @@
+%h1 Results
+%table{:width => "100%"}
+  %thead
+    %tr
+      %th Address
+      %th Latitude
+      %th Longitude
+  %tbody
+    - @geocoded_data.each do |key, value|
+      %tr
+        %td
+          = key
+        %td
+          = value[:lat]
+        %td
+          = value[:long]

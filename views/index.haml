@@ -1,0 +1,10 @@
+%h1 Geocoder
+
+%form{:action => '/geocode', :method => 'post', :enctype => "multipart/form-data"}
+  %label Upload addresses
+  %input{:type => 'file', :name => 'file_to_geocode', :id => 'file_to_geocode'}
+  %input{:type => 'submit', :value => 'Geocode'}
+  %small.note
+    %strong File guidelines:
+    The file must be a CSV (comma seperated values), and must have no additional columns beyond address data. Special characters can be a problem, and so it is recommended that you export data from Excel in 'ASCII' encoding.
+    
