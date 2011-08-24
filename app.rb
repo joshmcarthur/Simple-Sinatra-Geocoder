@@ -6,16 +6,15 @@ require 'sinatra/base'
 require 'haml'
 require 'csv'
 require 'geokit'
-require 'ruby-debug'
 
 class App < Sinatra::Base
-  
+
   set :public, "public"
-  
+
   get '/' do
     haml :index
   end
-  
+
   post '/geocode' do
     @geocoded_data = {}
     redirect '/' if params[:file_to_geocode][:tempfile].nil?
@@ -29,3 +28,4 @@ class App < Sinatra::Base
     haml :results
   end
 end
+
